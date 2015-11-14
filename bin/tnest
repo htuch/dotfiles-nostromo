@@ -1,0 +1,6 @@
+#!/bin/bash
+
+unset TMUX
+tmux rename-window $1
+tmux -L tmux-htuch-$1 -f ~/.tmux.nested new-session -s $1 || tmux -L tmux-htuch-$1 -f ~/.tmux.nested attach-session -t $1
+

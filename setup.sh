@@ -8,6 +8,8 @@ if [ ! -d ~/.zprezto ]
 then
   git clone --recursive https://github.com/htuch/prezto.git -b htuch-nostromo ~/.zprezto
   git clone https://github.com/tarruda/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+  git clone https://github.com/htuch/powerline.git -b htuch-nostromo ~/.powerline
+  pip install --user --editable ~/.powerline
 
   setopt EXTENDED_GLOB
   for rcfile in ~/.zprezto/runcoms/^README.md(.N); do
@@ -16,7 +18,7 @@ then
   done
 fi
 
-DOTLINKS=".dir_colors .gitignore .inputrc"
+DOTLINKS=".dir_colors .gitignore .inputrc .tmux.conf .tmux.nested .tmux.shared"
 
 for d in ${=DOTLINKS}
 do
