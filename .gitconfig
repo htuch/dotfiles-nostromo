@@ -1,0 +1,56 @@
+[user]
+	name = "Harvey Tuch"
+	email = h.github@tuch.id.au
+
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = auto
+	ui = auto
+        pager = true
+
+[alias]
+        fm = !"git format-patch $1^..$1"
+        dm = diff master
+        co = checkout
+        rc = rebase --continue
+        br = branch -v
+        st = status -s
+        wc = whatchanged -p
+        rb = rebase
+        cm = commit
+        cs = changeset
+        cp = cherry-pick
+        sh = show HEAD
+        gr = grep -p -n -5 --break
+        a = commit -a --amend
+        c = commit -am
+        d = diff
+        l = log --oneline --decorate --graph
+        lm = log --oneline --decorate master..HEAD
+        sync = !"CURRENT_BR=`git branch | sed -e '/^[^*]/d' -e 's/* \\(.*\\)/\\1/'` && git co master && git pull && git co $CURRENT_BR && git rebase master"
+        nuke = !"CURRENT_BR=`git branch | sed -e '/^[^*]/d' -e 's/* \\(.*\\)/\\1/'` && git co master && git pull && git br -d $CURRENT_BR"
+        submit = push origin HEAD:master
+
+[push]
+	default = tracking
+
+[color]
+        ui = auto
+
+[color "branch"]
+        current = yellow bold
+        local = yellow
+        remote = green
+
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan

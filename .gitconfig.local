@@ -1,0 +1,5 @@
+[include]
+        path = ~/.nostromo/.gitconfig
+
+[user]
+        email = htuch@wherever
