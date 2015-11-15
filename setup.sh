@@ -8,6 +8,7 @@ if [ ! -d ~/.zprezto ]
 then
   git clone --recursive https://github.com/htuch/prezto.git -b htuch-nostromo ~/.zprezto
   git clone https://github.com/tarruda/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+  git clone https://github.com/VundleVim/Vundle.vim.git ${NS}/.vim/bundle/Vundle.vim
   git clone https://github.com/Tarrasch/zsh-bd.git ~/.zsh/zsh-bd
   git clone https://github.com/htuch/powerline.git -b htuch-nostromo ~/.powerline
   pip install --user --editable ~/.powerline
@@ -19,7 +20,7 @@ then
   done
 fi
 
-DOTLINKS=".dir_colors .gitignore .inputrc .tmux.conf .tmux.nested .tmux.shared"
+DOTLINKS=".dir_colors .gitignore .inputrc .tmux.conf .tmux.nested .tmux.shared .vim .vimrc"
 
 for d in ${=DOTLINKS}
 do
@@ -34,5 +35,7 @@ for f in ${=TOUCHFILES}
 do
   touch ~/${f}
 done
+
+vim +PluginInstall +qall
 
 chsh -s /bin/zsh
