@@ -12,15 +12,11 @@ then
   git clone https://github.com/Tarrasch/zsh-bd.git ~/.zsh/zsh-bd
   git clone https://github.com/htuch/powerline.git -b htuch-nostromo ~/.powerline
   pip install --user --editable ~/.powerline
-
-  setopt EXTENDED_GLOB
-  for rcfile in ~/.zprezto/runcoms/^README.md(.N); do
-          echo $rcfile
-          ln -snf "$rcfile" ~/.${rcfile:t}
-  done
 fi
 
-DOTLINKS=".dir_colors .gitignore .inputrc .tmux.conf .tmux.nested .tmux.shared .vim .vimrc"
+
+DOTLINKS=".dir_colors .gitignore .inputrc .tmux.conf .tmux.nested .tmux.shared .vim .vimrc
+    .zlogin .zlogout .zpreztorc .zprofile .zshenv .zshrc"
 
 for d in ${=DOTLINKS}
 do
