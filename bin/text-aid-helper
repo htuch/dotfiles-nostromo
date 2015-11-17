@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+# Launch vim in dedicated tmux window for text-aid
+
+# Cleanup old sessions (i.e. act modal)
+tmux kill-window -t text-aid
+
+# Launch vim in new window and wait for completion
+tmux new-window -n text-aid "~/.nostromo/bin/text-aid-vim $@; tmux wait-for -S text-aid-vim-completion"
+tmux wait-for text-aid-vim-completion

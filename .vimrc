@@ -185,7 +185,12 @@ noremap ,s :noh<Enter>
 nnoremap ,l kywjpi
 
 " xmllint file
-nnoremap ,x :1,$!xmllint --format -<Enter>
+nnoremap ,x :%!xmllint --format -<Enter>
+
+" HTML/markdown conversion
+nnoremap ,M :%!pandoc --from=html --to=markdown -<Enter>
+nnoremap ,H :%!pandoc --from=markdown --to=html -<Enter>
+nnoremap ,T :%!pandoc --from=html --to=plain -<Enter>
 
 " Toggles
 noremap ,c :setlocal cursorline!<CR> " Toggle cursor line highlighting

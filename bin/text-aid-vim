@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Ensure we cleanup even when we get killed by tmux kill-window in
+# text-aid-helper
+trap "rm -f $1" HUP
+
+vim $1

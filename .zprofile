@@ -73,6 +73,9 @@ if [[ ! -d "$TMPDIR" ]]; then
   mkdir -p -m 700 "$TMPDIR"
 fi
 
+# rwx by user only by default (safety first)
+umask 077
+
 export POWERLINE_CONFIG_COMMAND=~/.powerline/scripts/powerline-config
 export PATH=~/.nostromo/bin:~/.local/bin:~/.powerline/scripts:$PATH
 
