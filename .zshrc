@@ -46,10 +46,18 @@ setopt EXTENDED_GLOB GLOB_COMPLETE
 bindkey -M viins ' ' magic-space
 
 # History search in both insert and command modes
-bindkey -M vicmd '/' history-incremental-search-backward
-bindkey -M vicmd '?' history-incremental-search-forward
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
 bindkey -M viins '^r' history-incremental-search-backward
-bindkey -M viins '^s' history-incremental-search-forward
+bindkey -M viins '^f' history-incremental-search-forward
+
+# Kill entire word, not just up to some punctuation, e.g. /blah/asdf-asdf -> /blah
+bindkey '^w' backward-kill-word
+bindkey -s '^e' '^[BdWi'
+
+# ctrl-p/n history nav
+bindkey '^p' up-history
+bindkey '^n' down-history
 
 # No bell
 setopt NOBEEP
@@ -62,6 +70,9 @@ setopt PRINT_EXIT_VALUE
 
 # Allow commands like "git show HEAD^" to work with glob match fails
 setopt NO_NOMATCH
+
+# Don't do the tab-navigable menu thing, i.e. make it more like bash tab completion.
+setopt NO_AUTO_MENU
 
 # Pipe into a local variable, e.g. ps aux | k; echo $kept
 keep() {
