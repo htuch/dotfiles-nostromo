@@ -32,6 +32,8 @@ do
   touch ~/${f}
 done
 
+~/.nostromo/setup-fzf.sh
+
 vim +PluginInstall +qall
 
 chsh -s /bin/zsh

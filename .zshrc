@@ -11,16 +11,16 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Load zsh-autosuggestions, fish-like predictive typeahead.
-source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
-
-# zsh-bd, quick parent directory traversal.
-source ~/.zsh/zsh-bd/bd.zsh
+#source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
 
 # Enable autosuggestions automatically.
 zle-line-init() {
-  zle autosuggest-start
+#  zle autosuggest-start
 }
-zle -N zle-line-init
+#zle -N zle-line-init
+
+# zsh-bd, quick parent directory traversal.
+source ~/.zsh/zsh-bd/bd.zsh
 
 # Jump forward a word or to end of the line in insert mode
 bindkey '^f' vi-forward-blank-word
@@ -53,7 +53,7 @@ bindkey -M viins '^f' history-incremental-search-forward
 
 # Kill entire word, not just up to some punctuation, e.g. /blah/asdf-asdf -> /blah
 bindkey '^w' backward-kill-word
-bindkey -s '^e' '^[BdWi'
+bindkey -s '^h' '^[BdWi'
 
 # ctrl-p/n history nav
 bindkey '^p' up-history
@@ -112,5 +112,10 @@ alias -s c=vim
 alias -s py=vim
 alias -s md=vim
 alias -s log='less -N'
+
+# Fuzzy matcher (make this last, so we override existing bindings if fzf is
+# present, gracefully degrade if not)
+export FZF_COMPLETION_TRIGGER='@'
+[ -f ~/.nostromo/.fzf.zsh ] && source ~/.nostromo/.fzf.zsh
 
 source ~/.zshrc.local
