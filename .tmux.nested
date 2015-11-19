@@ -18,6 +18,5 @@ set -g status-bg colour234
 set-window-option -g window-status-current-bg colour245
 set-window-option -g window-status-current-fg colour0
 
-set-window-option -g window-status-bell-fg colour227
-set-window-option -g window-status-bell-bg colour230
-
+set-window-option -g window-status-bell-fg colour226
+set-window-option -g window-status-bell-bg colour0

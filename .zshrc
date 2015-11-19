@@ -107,6 +107,9 @@ alias -s log='less -N'
 alias -g L="| less"
 alias -g G="| grep"
 
+# Beep beep
+alias B="echo -ne '\007'"
+
 # Fuzzy matcher (make this last, so we override existing bindings if fzf is
 # present, gracefully degrade if not)
 export FZF_COMPLETION_TRIGGER='@'
