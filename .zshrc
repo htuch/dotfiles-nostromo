@@ -10,15 +10,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Load zsh-autosuggestions, fish-like predictive typeahead.
-#source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically.
-zle-line-init() {
-#  zle autosuggest-start
-}
-#zle -N zle-line-init
-
 # zsh-bd, quick parent directory traversal.
 source ~/.zsh/zsh-bd/bd.zsh
 
@@ -117,5 +108,16 @@ alias -s log='less -N'
 # present, gracefully degrade if not)
 export FZF_COMPLETION_TRIGGER='@'
 [ -f ~/.nostromo/.fzf.zsh ] && source ~/.nostromo/.fzf.zsh
+
+# Load zsh-autosuggestions, fish-like predictive typeahead.
+#
+# Must follow fzf sourcing, since there is a dep on the fzf-completion widget.
+source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically.
+zle-line-init() {
+  zle autosuggest-start
+}
+zle -N zle-line-init
 
 source ~/.zshrc.local

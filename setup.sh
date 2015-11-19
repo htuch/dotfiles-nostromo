@@ -7,7 +7,7 @@ NS=~/.nostromo
 if [ ! -d ~/.zprezto ]
 then
   git clone --recursive https://github.com/htuch/prezto.git -b htuch-nostromo ~/.zprezto
-  git clone https://github.com/htuch/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+  git clone https://github.com/htuch/zsh-autosuggestions -b htuch-nostromo ~/.zsh/zsh-autosuggestions
   git clone https://github.com/htuch/Vundle.vim.git ${NS}/.vim/bundle/Vundle.vim
   git clone https://github.com/htuch/zsh-bd.git ~/.zsh/zsh-bd
   git clone https://github.com/htuch/powerline.git -b htuch-nostromo ~/.powerline
