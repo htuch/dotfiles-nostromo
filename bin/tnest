@@ -1,6 +1,15 @@
 #!/bin/bash
 
+export PARENT_TMUX="${TMUX}"
 unset TMUX
-tmux rename-window $1
-tmux -L tmux-htuch-$1 -f ~/.tmux.nested new-session -s $1 || tmux -L tmux-htuch-$1 -f ~/.tmux.nested attach-session -t $1
 
+SOCKET="tmux-htuch-$1"
+TMUX_CONF=~/.nostromo/.tmux.nested
+
+tmux rename-window $1
+
+tmux -L ${SOCKET} -f ${TMUX_CONF} new-session -s $1 || \
+    tmux -L ${SOCKET} -f ${TMUX_CONF} attach-session -t $1
+
+# Restore automatic window naming
+tmux set-window-option automatic-rename on

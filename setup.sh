@@ -15,7 +15,7 @@ then
 fi
 
 
-DOTLINKS=".dir_colors .gitignore .inputrc .tmux.conf .tmux.nested .tmux.shared .vim .vimrc
+DOTLINKS=".dir_colors .gitignore .inputrc .tmux.conf .vim .vimrc
     .zlogin .zlogout .zpreztorc .zprofile .zshenv .zshrc"
 
 for d in ${=DOTLINKS}

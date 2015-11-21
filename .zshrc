@@ -110,6 +110,8 @@ alias -g G="| grep"
 # Beep beep
 alias B="echo -ne '\007'"
 
+alias tmux-new-local="tmux -f ~/.nostromo/tmux/setup-local-session new-session -s local"
+
 # Fuzzy matcher (make this last, so we override existing bindings if fzf is
 # present, gracefully degrade if not)
 export FZF_COMPLETION_TRIGGER='@'

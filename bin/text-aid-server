@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+TEXT_AID_TOO_EDITOR="~/.nostromo/bin/text-aid-helper" \
+    coffee ~/.text-aid-too/server/server.coffee --port 9293

@@ -6,5 +6,6 @@
 tmux kill-window -t text-aid
 
 # Launch vim in new window and wait for completion
+#TMUX="${PARENT_TMUX}" tmux select-window -t chrome
 tmux new-window -n text-aid "~/.nostromo/bin/text-aid-vim $@; tmux wait-for -S text-aid-vim-completion"
 tmux wait-for text-aid-vim-completion

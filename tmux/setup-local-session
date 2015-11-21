@@ -1,0 +1,3 @@
+source-file ~/.nostromo/.tmux.conf
+
+new-session -s chrome text-aid-server

@@ -1,11 +1,10 @@
 # Nested session
-
-source-file ~/.tmux.shared
+source-file ~/.nostromo/.tmux.shared
 
 set-option -g prefix C-a
 
 # misc. nicer bindings
-bind r source-file ~/.tmux.nested
+bind r source-file ~/.nostromo/.tmux.nested
 
 # prefix setup
 #bind-key C-a send-prefix

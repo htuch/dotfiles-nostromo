@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_iTerm_Switch</name>
+    <url type="shell">
+      <![CDATA[ osascript ~/.nostromo/osx/scripts/SwitchToFirstITermTab.scpt ]]>
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Text-aid</name>
+    <identifier>textaid</identifier>
+    <only>GOOGLE_CHROME</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::I, ModifierFlag::COMMAND_L,
+      KeyCode::VK_OPEN_URL_SHELL_iTerm_Switch,
+    </autogen>
+  </item>
+</root>

@@ -154,6 +154,7 @@ augroup FileTypeConfig
     au FileType rust,c,h,cpp,sh setlocal shiftwidth=4 softtabstop=4 expandtab cino=l1,(0,W0,t0 tw=80
     au FileType java,m setlocal shiftwidth=4 softtabstop=4 expandtab cino=l1 tw=80
     au FileType smv setlocal shiftwidth=2 softtabstop=2 expandtab cino=l1 tw=220
+    au FileType xml setlocal shiftwidth=2 softtabstop=2 expandtab cino=l1 tw=220
     au FileType asm setlocal shiftwidth=4 softtabstop=4 expandtab cino=l1
     au FileType html,css,coffee,javascript,hs setlocal shiftwidth=2 softtabstop=2 expandtab cino=l1
     au FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab cino=l1
@@ -191,6 +192,7 @@ nnoremap ,x :%!xmllint --format -<Enter>
 nnoremap ,M :%!pandoc --from=html --to=markdown -<Enter>
 nnoremap ,H :%!pandoc --from=markdown --to=html -<Enter>
 nnoremap ,T :%!pandoc --from=html --to=plain -<Enter>
+nnoremap ,P :%d<Enter>i<pre><Esc>pGo</pre><Esc>
 
 " Toggles
 noremap ,c :setlocal cursorline!<CR> " Toggle cursor line highlighting

@@ -5,3 +5,6 @@
 trap "rm -f $1" HUP
 
 vim $1
+
+# Switch back to Chrome
+[[ $(uname) == 'Darwin' ]] && osascript ~/.nostromo/osx/scripts/SwitchToChrome.scpt
