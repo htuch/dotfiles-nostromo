@@ -1,0 +1,10 @@
+URxvt*loginShell: true
+URxvt*background: black
+URxvt*foreground: white
+URxvt*scrollBar: false
+URxvt*font: xft:Consolas:pixelsize=12,xft:Inconsolata for Powerline Mod:pizelsize=12
+
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.antialias: 1
+Xft.rgba: none

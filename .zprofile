@@ -78,6 +78,6 @@ umask 077
 
 export POWERLINE_CONFIG_COMMAND=~/.powerline/scripts/powerline-config
 export PATH=~/.nostromo/bin:~/.local/bin:~/.powerline/scripts:$PATH
-export MANPATH=~/.nostromo/man:$(manpath)
+export MANPATH=~/.nostromo/man:$(manpath -q)
 
 TMPPREFIX="${TMPDIR%/}/zsh"
